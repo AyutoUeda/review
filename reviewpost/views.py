@@ -1,4 +1,5 @@
 from django.http import request
+from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.db import IntegrityError
@@ -36,12 +37,20 @@ def loginview(request):
 
 # renderメソッドの目的は指定したhtmlファイルとデータを用いて、ブラウザに描画すること。
 
+def index(request):
+  return render(request, 'index.html')
+
 @login_required
 def listview(request):
   object_list = ReviewModel.objects.all()
   return render(request, 'list.html', { 'object_list':object_list})
 
 @login_required
+def listview_1(request):
+  object_list = ReviewModel.objects.all()
+  return redirect(request, 'list_1.html', { 'object_list':object_list})
+
+# @login_required
 def detailview(request, pk):
   object = ReviewModel.objects.get(pk=pk)
   return render(request, 'detail.html', {'object':object})

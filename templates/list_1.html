@@ -8,14 +8,15 @@
 {% block content %}
 
 <nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="{% url 'list' %}">
+  <a class="navbar-brand" href="{% url 'list_1' %}">
     <img src="{% static 'liverpool.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
     Test
   </a>
-  
+  <p>Welcome {{ user.username }}</p>
+
   <ul class="nav justify-content-end">
     <li class="nav-item">
-      <a class="nav-link active" href="{% url 'login' %}">LOGIN</a>
+      <!-- <a class="nav-link active" href="{% url 'logout' %}">Logout</a> -->
     </li>
   </ul>
 </nav>

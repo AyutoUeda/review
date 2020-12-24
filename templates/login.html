@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
 <div class="container">
   <form class="form-signin" method="post">{% csrf_token %}
-    <img class="mb-4" src="../assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
+    <img class="mb-4" src="{% static 'liverpool.jpg' %}" alt="" width="72" height="57">
       <h1 class="h3 mb-3 fw-normal">Please login</h1> 
       <label for="inputEmail" class="visually-hidden">Username</label>
       <input type="text" id="inputEmail" class="form-control" placeholder="username" name="username_data" required autofocus>
       <label for="inputPassword" class="visually-hidden">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password_data" required>
-      <!-- <div class="checkbox mb-3"></div> -->
+
+      <!-- <a class="btn btn-lg btn-primary btn-block" href="{%  url 'list_1' %}" role="button" type="submit">Sign in</a> -->
+      
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
   </form>

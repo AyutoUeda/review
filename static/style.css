@@ -1,3 +1,11 @@
 .card{
   margin-bottom: 30px;
 }
+
+.card-body{
+  display: flex;
+}
+
+.btn.btn-primary{
+  margin-left: 20px;
+}

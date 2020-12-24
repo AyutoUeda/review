@@ -6,6 +6,13 @@
 {% endblock header %}
 
 {% block content %}
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'list' %}">
+    <img src="{% static 'liverpool.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+    Test
+  </a>
+</nav>
 <div class="container">
   <div class="card">
     <h5 class="card-header">{{object.title}}</h5>
@@ -14,8 +21,8 @@
       <h5 class="card-title">投稿者:{{object.author}}</h5>
       <h5 class="card-title">レビュー内容:{{object.content}}</h5>
       <h5 class="card-title">投稿者の評価:{{object.evaluation}}</h5>
-      <h5 class="card-title">レビューが参考になった人:{{object.useful_review}}</h5>
-      <a href="{% url 'evaluation' object.pk %}" class="btn btn-primary">参考になった</a>
+      <h5 class="card-title">GOOD:{{object.useful_review}}</h5>
+      <a href="{% url 'evaluation' object.pk %}" class="btn btn-primary">GOOD</a>
       <a href="{% url 'list' %}" class="btn btn-primary" role="button">戻る</a>
     </div>
   </div>

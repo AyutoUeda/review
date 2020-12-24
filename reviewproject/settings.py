@@ -12,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8t!0kei3f+m@x15r-giy=vgj=7rj!pa3zvtfm+a7-c=i@5hn2@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['ayu.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
